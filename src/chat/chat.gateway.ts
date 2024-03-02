@@ -54,6 +54,6 @@ export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
     @MessageBody() messageData: MessageDTO,
   ) {
     const user = this.users.get(client)
-    this.server.emit('userMessage', {user: user, messageData})
+    this.server.emit('userMessage', {user: user, message: messageData.message})
   }
 }
